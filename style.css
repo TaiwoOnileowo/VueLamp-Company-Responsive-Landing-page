@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+body{
+    background: #1d2026;
+    color: #fff;
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    align-items: center;
+    padding: 10px 4%;
+}
+
+nav .menu-img{
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav .logo{
+    width:200px;
+    cursor: pointer;
+}
+
+.list{
+     flex:1;
+     text-align: right ;
+}
+nav ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+}
+
+nav ul li a:hover{
+color: #cce6ff;
+}
+.toggle-btn{
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border:0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 0.5s ;
+}
+
+button span{
+    display: block;
+    background: #999;
+    height: 26px;
+    width:26px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 2px ;
+    transition: background 0.5s ,margin-left  0.5s;
+}
+
+.lamp-container{
+    position:absolute;
+    left:25%;
+    top: -20px;
+    width: 200px;
+}
+
+.lamp{
+    width: 100%;
+
+}
+
+.light{
+    position: absolute;
+    top:97%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    margin-left: -10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.text-container{
+    max-width: 550px;
+    margin-top: 7%;
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container h1{
+    font-size: 80px;
+    font-weight: 400;
+}
+
+p{
+    font-size: 18px;
+    margin-top: 4%;
+}
+
+.collections-btn{
+    padding: 15px 22px;
+    text-decoration: none;
+    background: #00986f;
+    display: inline-block;
+    color:#fff;
+    font-size: 18px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+}
+.collections-btn:hover{
+background: #007455;
+}
+.contact-btn{
+    padding: 15px 22px;
+    text-decoration: none;
+    background: #00986f;
+    color:#fff;
+    font-size: 18px;
+    border: none;
+    width:95px;
+    height:95px;
+    border-radius: 50%; 
+    cursor: pointer;
+    margin-top: 80px;
+  margin-left: 250px;
+}
+.contact-btn:hover{
+    background: #007455;
+}
+.active{
+    background: green;
+}
+.active span{
+    background: #fff;
+    margin-left: 31px;
+}
+.on{
+    opacity: 1;
+}
+
+.menu-icon, .close-icon{
+    cursor: pointer;
+    width: 35px;
+    position: absolute;
+    display: none;
+}
+.menu-icon{
+    top:3.5%;
+    right: 30px;
+   
+}
+.close-icon{
+    top: 30px;
+    right: 20px;
+}
+
+#check{
+    top:3.5%;
+    right: 20px;
+position: absolute;
+cursor: pointer;
+display: none;
+}
+
+@media (max-width:830px){
+
+    body{
+     width: 100%;
+     overflow-x: hidden;
+    }
+    nav{
+        justify-content: space-between;
+    }
+    nav .logo{
+        width:180px;
+    }
+    nav .menu-img{
+        display: none;
+    }
+    .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:70%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        right: -100%;
+        z-index: 90;
+        transition: all 0.2s ease-in-out;
+        text-align: center;
+        background: #8a8a8a;
+    }
+    .list li{
+        margin-top: 50px;
+    }
+   
+    #check:checked ~ .list{
+        right:0;
+    }
+    #check:checked ~ .menu-icon {
+        display: none;
+    }
+    
+    #check:checked ~ .close-icon {
+        display: block;
+    }
+    .menu-icon{
+        display: block;
+    }
+    .close-icon{
+        z-index: 100;
+    }
+    .toggle-btn{
+        margin-right:15%;
+        height: 25px;
+    width: 50px;
+
+    }
+    button span{
+        height: 20px;
+    width:20px;
+    }
+    .active span{
+        margin-left: 28px;
+    }
+    .lamp-container{
+        max-width:150px;
+        left:30%;
+        top:0;
+    }
+    .lamp{
+         width: 80%;
+    }
+    .light{
+        width:380px;
+        left: 43%;
+    }
+    .text-container{
+        max-width: 250px;
+        width:45%;
+       margin-left: 0;
+       position:relative;
+       float: right;
+    }
+    .text-container h1{
+        font-size:30px;
+        font-weight: 700;
+    }
+
+    p{
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .contact-btn{
+        margin-top: 80px;
+  margin-left: 120px;
+    }
+}
+@media (max-width:760px){
+    body{
+        height: 100%;
+    }
+    .hero{
+        display: flex;
+        
+    }
+    .text-container{
+        width:100%;
+        margin: 300px auto;
+        text-align: center;
+    }
+    .text{
+        text-align: center;
+    }
+    .menu-icon{
+        top:1.5%;
+    right: 10px;
+    }
+    nav .logo{
+        width:140px;
+    }
+    .contact-btn{
+        margin-left:80px;
+    }
+
+}
